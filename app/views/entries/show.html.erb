@@ -1,0 +1,116 @@
+<div>
+  <div>
+    <h1>
+      Entry #<%= @the_entry.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/entries">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_entry/<%= @the_entry.id %>">
+          Delete entry
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Mood
+      </dt>
+      <dd>
+        <%= @the_entry.mood %>
+      </dd>
+
+      <dt>
+        Weather
+      </dt>
+      <dd>
+        <%= @the_entry.weather %>
+      </dd>
+
+      <dt>
+        Body
+      </dt>
+      <dd>
+        <%= @the_entry.body %>
+      </dd>
+
+      <dt>
+        Image
+      </dt>
+      <dd>
+        <%= @the_entry.image %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_entry.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_entry.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit entry
+    </h2>
+
+    <form action="/modify_entry/<%= @the_entry.id %>"  method="post" >
+      <div>
+        <label for="mood_box">
+          Mood
+        </label>
+
+        <input type="text" id="mood_box" name="query_mood" value="<%= @the_entry.mood %>">
+      </div>
+
+      <div>
+        <label for="weather_box">
+          Weather
+        </label>
+
+        <input type="text" id="weather_box" name="query_weather" value="<%= @the_entry.weather %>">
+      </div>
+
+      <div>
+        <label for="body_box">
+          Body
+        </label>
+
+        <input type="text" id="body_box" name="query_body" value="<%= @the_entry.body %>">
+      </div>
+
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image" value="<%= @the_entry.image %>">
+      </div>
+
+      <button>
+        Update entry
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

@@ -1,4 +1,42 @@
 Rails.application.routes.draw do
+  # Routes for the Entry resource:
+
+  # CREATE
+  post("/insert_entry", { :controller => "entries", :action => "create" })
+          
+  # READ
+  get("/entries", { :controller => "entries", :action => "index" })
+  
+  get("/entries/:path_id", { :controller => "entries", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_entry/:path_id", { :controller => "entries", :action => "update" })
+  
+  # DELETE
+  get("/delete_entry/:path_id", { :controller => "entries", :action => "destroy" })
+
+  #------------------------------
+
+  # Routes for the Todo resource:
+
+  # CREATE
+  post("/insert_todo", { :controller => "todos", :action => "create" })
+          
+  # READ
+  get("/todos", { :controller => "todos", :action => "index" })
+  
+  get("/todos/:path_id", { :controller => "todos", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_todo/:path_id", { :controller => "todos", :action => "update" })
+  
+  # DELETE
+  get("/delete_todo/:path_id", { :controller => "todos", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the Quanty resource:
 
   # CREATE
@@ -15,25 +53,6 @@ Rails.application.routes.draw do
   
   # DELETE
   get("/delete_quanty/:path_id", { :controller => "quanties", :action => "destroy" })
-
-  #------------------------------
-
-  # Routes for the Recipe ingredient resource:
-
-  # CREATE
-  post("/insert_recipe_ingredient", { :controller => "recipe_ingredients", :action => "create" })
-          
-  # READ
-  get("/recipe_ingredients", { :controller => "recipe_ingredients", :action => "index" })
-  
-  get("/recipe_ingredients/:path_id", { :controller => "recipe_ingredients", :action => "show" })
-  
-  # UPDATE
-  
-  post("/modify_recipe_ingredient/:path_id", { :controller => "recipe_ingredients", :action => "update" })
-  
-  # DELETE
-  get("/delete_recipe_ingredient/:path_id", { :controller => "recipe_ingredients", :action => "destroy" })
 
   #------------------------------
 

@@ -1,0 +1,86 @@
+<div>
+  <div>
+    <h1>
+      Todo #<%= @the_todo.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/todos">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_todo/<%= @the_todo.id %>">
+          Delete todo
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Body
+      </dt>
+      <dd>
+        <%= @the_todo.body %>
+      </dd>
+
+      <dt>
+        Entry
+      </dt>
+      <dd>
+        <%= @the_todo.entry_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_todo.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_todo.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit todo
+    </h2>
+
+    <form action="/modify_todo/<%= @the_todo.id %>"  method="post" >
+      <div>
+        <label for="body_box">
+          Body
+        </label>
+
+        <input type="text" id="body_box" name="query_body" value="<%= @the_todo.body %>">
+      </div>
+
+      <div>
+        <label for="entry_id_box">
+          Entry
+        </label>
+
+        <input type="text" id="entry_id_box" name="query_entry_id" value="<%= @the_todo.entry_id %>">
+      </div>
+
+      <button>
+        Update todo
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
