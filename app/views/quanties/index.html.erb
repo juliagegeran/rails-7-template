@@ -1,0 +1,70 @@
+<div>
+  <div>
+    <h1>
+      List of all quanties
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new quanty
+    </h2>
+
+    <form action="/insert_quanty" method="post">
+      <button>
+        Create quanty
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_quanties.each do |a_quanty| %>
+      <tr>
+        <td>
+          <%= a_quanty.id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_quanty.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_quanty.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/quanties/<%= a_quanty.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

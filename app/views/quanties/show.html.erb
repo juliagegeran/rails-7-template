@@ -1,0 +1,56 @@
+<div>
+  <div>
+    <h1>
+      Quanty #<%= @the_quanty.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/quanties">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_quanty/<%= @the_quanty.id %>">
+          Delete quanty
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_quanty.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_quanty.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit quanty
+    </h2>
+
+    <form action="/modify_quanty/<%= @the_quanty.id %>"  method="post" >
+      <button>
+        Update quanty
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

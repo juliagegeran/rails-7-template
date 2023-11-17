@@ -1,39 +1,39 @@
 Rails.application.routes.draw do
-  # Routes for the Ingredient resource:
+  # Routes for the Quanty resource:
 
   # CREATE
-  post("/insert_ingredient", { :controller => "ingredients", :action => "create" })
+  post("/insert_quanty", { :controller => "quanties", :action => "create" })
           
   # READ
-  get("/ingredients", { :controller => "ingredients", :action => "index" })
+  get("/quanties", { :controller => "quanties", :action => "index" })
   
-  get("/ingredients/:path_id", { :controller => "ingredients", :action => "show" })
+  get("/quanties/:path_id", { :controller => "quanties", :action => "show" })
   
   # UPDATE
   
-  post("/modify_ingredient/:path_id", { :controller => "ingredients", :action => "update" })
+  post("/modify_quanty/:path_id", { :controller => "quanties", :action => "update" })
   
   # DELETE
-  get("/delete_ingredient/:path_id", { :controller => "ingredients", :action => "destroy" })
+  get("/delete_quanty/:path_id", { :controller => "quanties", :action => "destroy" })
 
   #------------------------------
 
-  # Routes for the Recipe resource:
+  # Routes for the Recipe ingredient resource:
 
   # CREATE
-  post("/insert_recipe", { :controller => "recipes", :action => "create" })
+  post("/insert_recipe_ingredient", { :controller => "recipe_ingredients", :action => "create" })
           
   # READ
-  get("/recipes", { :controller => "recipes", :action => "index" })
+  get("/recipe_ingredients", { :controller => "recipe_ingredients", :action => "index" })
   
-  get("/recipes/:path_id", { :controller => "recipes", :action => "show" })
+  get("/recipe_ingredients/:path_id", { :controller => "recipe_ingredients", :action => "show" })
   
   # UPDATE
   
-  post("/modify_recipe/:path_id", { :controller => "recipes", :action => "update" })
+  post("/modify_recipe_ingredient/:path_id", { :controller => "recipe_ingredients", :action => "update" })
   
   # DELETE
-  get("/delete_recipe/:path_id", { :controller => "recipes", :action => "destroy" })
+  get("/delete_recipe_ingredient/:path_id", { :controller => "recipe_ingredients", :action => "destroy" })
 
   #------------------------------
 
